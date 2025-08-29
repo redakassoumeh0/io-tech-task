@@ -2,6 +2,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import getRequestConfig from "@/i18n/request";
 import "./globals.css";
+import { getLocale, getMessages } from "next-intl/server";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +11,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { locale, messages } = await getRequestConfig();
+  const locale = await getLocale(); 
+  const messages = await getMessages();
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
