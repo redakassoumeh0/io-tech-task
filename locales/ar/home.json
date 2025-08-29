@@ -1,0 +1,44 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "portraitUrl": "/slide-image.jpg",
+      "title": "شريكك القانوني الموثوق",
+      "description": "نقدّم استشارات قانونية احترافية مع التزام بالتميّز والثقة.",
+      "ctaLabel": "اقرأ المزيد",
+      "ctaHref": "#services"
+    },
+    {
+      "id": 2,
+      "portraitUrl": "/slide-image.jpg",
+      "title": "خبرة في القانون التجاري",
+      "description": "من العقود إلى حوكمة الشركات، نساعد نشاطك على الالتزام والحماية.",
+      "ctaLabel": "استكشف",
+      "ctaHref": "#business-law"
+    },
+    {
+      "id": 3,
+      "portraitUrl": "/slide-image.jpg",
+      "title": "ملتزمون بنجاح عملائنا",
+      "description": "نركّز على فهم احتياجاتك وتقديم حلول مصمّمة خصيصًا لك.",
+      "ctaLabel": "اكتشف",
+      "ctaHref": "#clients"
+    },
+    {
+      "id": 4,
+      "portraitUrl": "/slide-image.jpg",
+      "title": "ابتكار يلتقي الخبرة",
+      "description": "نمزج الأساليب الحديثة مع خبرات عميقة لتحقيق أفضل النتائج.",
+      "ctaLabel": "اعرف أكثر",
+      "ctaHref": "#about"
+    },
+    {
+      "id": 5,
+      "portraitUrl": "/slide-image.jpg",
+      "title": "رؤية عالمية وخبرة محلية",
+      "description": "ندعم العملاء محليًا ودوليًا بمعرفة دقيقة بالقوانين الإقليمية.",
+      "ctaLabel": "تواصل معنا",
+      "ctaHref": "#contact"
+    }
+  ]
+}

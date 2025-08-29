@@ -1,0 +1,39 @@
+{
+  "slides": [
+    {
+      "portraitUrl": "/slide-image.jpg",
+      "title": "Your Trusted Legal Partner",
+      "description": "We provide professional legal consultation services with a commitment to excellence and trust.",
+      "ctaLabel": "Read More",
+      "ctaHref": "#services"
+    },
+    {
+      "portraitUrl": "/slide-image.jpg",
+      "title": "Expertise in Business Law",
+      "description": "From contracts to corporate governance, we help your business stay compliant and protected.",
+      "ctaLabel": "Explore",
+      "ctaHref": "#business-law"
+    },
+    {
+      "portraitUrl": "/slide-image.jpg",
+      "title": "Dedicated to Client Success",
+      "description": "Our team is focused on understanding your needs and delivering tailored solutions.",
+      "ctaLabel": "Discover",
+      "ctaHref": "#clients"
+    },
+    {
+      "portraitUrl": "/slide-image.jpg",
+      "title": "Innovation Meets Experience",
+      "description": "Combining modern approaches with decades of expertise to achieve the best outcomes.",
+      "ctaLabel": "Learn More",
+      "ctaHref": "#about"
+    },
+    {
+      "portraitUrl": "/slide-image.jpg",
+      "title": "Global Perspective, Local Insight",
+      "description": "We support both local and international clients with deep knowledge of regional laws.",
+      "ctaLabel": "Contact Us",
+      "ctaHref": "#contact"
+    }
+  ]
+}

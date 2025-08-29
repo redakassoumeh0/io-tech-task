@@ -1,0 +1,30 @@
+{
+  "about": "About us",
+  "services": "Services",
+  "ourTeam": "Our Team",
+  "blogs": "Blogs",
+  "contact": "Contact Us",
+  "book": "Book Appointment",
+  "home": "Home",
+  "searchPlaceholder": "Search...",
+  "servicesList": [
+    "Legal Consultation Services",
+    "Foreign Investment Services",
+    "Contracts",
+    "Notarization",
+    "Insurance",
+    "Defense in All Cases",
+    "Banks and Financial Institutions",
+    "Corporate Governance Services",
+    "Companies Liquidation",
+    "Internal Regulations",
+    "Services for Companies and Institutions",
+    "Arbitration",
+    "Intellectual Property",
+    "Corporate Restructuring",
+    "Establishing National & Foreign Companies",
+    "Commercial Agencies",
+    "Supporting Vision 2030",
+    "Estates"
+  ]
+}
