@@ -2,7 +2,7 @@
   "slides": [
     {
       "id": 1,
-      "portraitUrl": "/slide-image.jpg",
+      "portraitUrl": "/person-image.jpg",
       "title": "شريكك القانوني الموثوق",
       "description": "نقدّم استشارات قانونية احترافية مع التزام بالتميّز والثقة.",
       "ctaLabel": "اقرأ المزيد",
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "portraitUrl": "/slide-image.jpg",
+      "portraitUrl": "/person-image.jpg",
       "title": "خبرة في القانون التجاري",
       "description": "من العقود إلى حوكمة الشركات، نساعد نشاطك على الالتزام والحماية.",
       "ctaLabel": "استكشف",
@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "portraitUrl": "/slide-image.jpg",
+      "portraitUrl": "/person-image.jpg",
       "title": "ملتزمون بنجاح عملائنا",
       "description": "نركّز على فهم احتياجاتك وتقديم حلول مصمّمة خصيصًا لك.",
       "ctaLabel": "اكتشف",
@@ -26,7 +26,7 @@
     },
     {
       "id": 4,
-      "portraitUrl": "/slide-image.jpg",
+      "portraitUrl": "/person-image.jpg",
       "title": "ابتكار يلتقي الخبرة",
       "description": "نمزج الأساليب الحديثة مع خبرات عميقة لتحقيق أفضل النتائج.",
       "ctaLabel": "اعرف أكثر",
@@ -34,11 +34,57 @@
     },
     {
       "id": 5,
-      "portraitUrl": "/slide-image.jpg",
+      "portraitUrl": "/person-image.jpg",
       "title": "رؤية عالمية وخبرة محلية",
       "description": "ندعم العملاء محليًا ودوليًا بمعرفة دقيقة بالقوانين الإقليمية.",
       "ctaLabel": "تواصل معنا",
       "ctaHref": "#contact"
     }
-  ]
+  ],
+  "team": {
+    "title": "فريقنا",
+    "description": "لوريم إيبسوم نص تجريبي في مجال الطباعة والتنضيد. يُستخدم كنص معياري منذ القرن السادس عشر.",
+    "members": [
+      {
+        "name": "الاسم هنا",
+        "position": "المسمّى الوظيفي",
+        "photo": "/person-image.jpg",
+        "phone": "#",
+        "whatsapp": "#",
+        "email": "#"
+      },
+      {
+        "name": "الاسم هنا",
+        "position": "المسمّى الوظيفي",
+        "photo": "/person-image.jpg",
+        "phone": "#",
+        "whatsapp": "#",
+        "email": "#"
+      },
+      {
+        "name": "الاسم هنا",
+        "position": "المسمّى الوظيفي",
+        "photo": "/person-image.jpg",
+        "phone": "#",
+        "whatsapp": "#",
+        "email": "#"
+      },
+      {
+        "name": "الاسم هنا",
+        "position": "المسمّى الوظيفي",
+        "photo": "/person-image.jpg",
+        "phone": "#",
+        "whatsapp": "#",
+        "email": "#"
+      },
+      {
+        "name": "الاسم هنا",
+        "position": "المسمّى الوظيفي",
+        "photo": "/person-image.jpg",
+        "phone": "#",
+        "whatsapp": "#",
+        "email": "#"
+      }
+    ]
+  }
 }

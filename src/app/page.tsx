@@ -2,6 +2,7 @@
 import { getTranslations } from "next-intl/server";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import OutTeamSection from "@/components/OutTeamSection";
 
 type Slide = {
   id: number;
@@ -21,6 +22,7 @@ export default async function Home() {
     <main>
       <Navbar />
       <Hero backgroundUrl={"/hero-image.jpg"} slides={slides} />
+      <OutTeamSection/>
     </main>
   );
 }
