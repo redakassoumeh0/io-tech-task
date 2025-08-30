@@ -86,5 +86,29 @@
         "email": "#"
       }
     ]
+  },
+  "clients": {
+    "title": "What our clients are saying",
+    "subtitle": "Our clients range from individual investors, to local, international as well as Fortune 500 companies.",
+    "slides": [
+      {
+        "photo": "/person-image.jpg",
+        "quote": "With the help of the hospitable staff I was able to get my work done without any hassle. I was always updated about my case and my queries never went unanswered.",
+        "name": "Mohammed Saif",
+        "role": "CEO, Company"
+      },
+      {
+        "photo": "/person-image.jpg",
+        "quote": "Professional service and timely responses. The team guided us through every step clearly.",
+        "name": "Aisha Khan",
+        "role": "Founder, Startup"
+      },
+      {
+        "photo": "/person-image.jpg",
+        "quote": "Reliable advice and great results. Highly recommended.",
+        "name": "Omar Ali",
+        "role": "Operations Manager"
+      }
+    ]
   }
 }
