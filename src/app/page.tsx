@@ -21,7 +21,6 @@ export default async function Home() {
 
   return (
     <main>
-      <Navbar />
       <Hero backgroundUrl={"/hero-image.jpg"} slides={slides} />
       <OutTeamSection />
       <ClientsSection/>
