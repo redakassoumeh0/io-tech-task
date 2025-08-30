@@ -1,0 +1,36 @@
+{
+  "heroImage": "/hero-image.jpg",
+  "back": "Back",
+  "title": "Legal Consultation Services",
+  "intro": "Law Firm is one of the leading legal offices that offer exceptional advisory services for both individuals and companies. Our mission is to provide comprehensive and specialized legal support to meet our clients' needs and offer the best legal solutions in various cases and legal fields.",
+  "sections": {
+    "general": {
+      "title": "General Legal Consultations",
+      "bullets": [
+        "Comprehensive legal consultations covering day-to-day and business matters.",
+        "Accurate legal advice based on a deep understanding of local and international laws."
+      ]
+    },
+    "corporate": {
+      "title": "Corporate Legal Consultations",
+      "intro": "We understand the importance of legal consultations for companies in building and enhancing their businesses. Our advisory services about:",
+      "bullets": [
+        "Establishing and registering companies.",
+        "All kinds of contracts and agreements.",
+        "Commercial disputes.",
+        "Compliance with local and international laws and regulations."
+      ]
+    },
+    "individual": {
+      "title": "Individual Legal Consultations",
+      "intro": "We offer customized advisory services for individuals, including:",
+      "bullets": [
+        "Family issues such as divorce, alimony, and custody.",
+        "Real-estate matters like buying, selling, and renting properties.",
+        "Employment issues such as hiring and wrongful termination.",
+        "Criminal cases and defending personal rights."
+      ]
+    }
+  },
+  "footerNote": "We are committed to providing professional and comprehensive legal services."
+}
