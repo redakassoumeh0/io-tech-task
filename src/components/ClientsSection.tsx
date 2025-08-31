@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { useStrapi } from "@/hooks/useStrapi";
 
 type ClientSlide = {
   photo: string;
@@ -19,7 +20,21 @@ const ClientsSection = () => {
 
   const title = t("clients.title");
   const subtitle = t("clients.subtitle");
-  const slides = t.raw("clients.slides") as ClientSlide[];
+
+  const {
+    data: slidesData,
+    loading,
+    error,
+  } = useStrapi<ClientSlide[]>("clients");
+
+  // تحويل البيانات من Strapi structure
+  const slides: ClientSlide[] =
+    slidesData?.map((item: any) => ({
+      photo: item.image?.url || "",
+      quote: item.message,
+      name: item.name,
+      role: item.company,
+    })) || [];
 
   const [index, setIndex] = useState(0);
   const canPrev = index > 0;
@@ -35,6 +50,7 @@ const ClientsSection = () => {
 
     let startX = 0,
       delta = 0;
+
     const onStart = (e: TouchEvent) => {
       startX = e.touches[0].clientX;
       delta = 0;
@@ -61,6 +77,10 @@ const ClientsSection = () => {
 
   const animKey = useMemo(() => `slide-${index}`, [index]);
 
+  if (loading) return <p className="text-center py-8">Loading...</p>;
+  if (error) return <p className="text-center py-8 text-red-500">{error}</p>;
+  if (slides.length === 0) return null;
+
   return (
     <section className="bg-brand-dark text-white" dir={isRTL ? "rtl" : "ltr"}>
       <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
@@ -76,7 +96,9 @@ const ClientsSection = () => {
           <div className="relative w-full aspect-[4/3] md:aspect-[4/3] bg-brand-medium rounded">
             <Image
               key={animKey + "-img"}
-              src={slides[index].photo}
+              src={`${
+                process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337"
+              }${slides[index].photo}`}
               alt={slides[index].name}
               fill
               className="object-cover rounded animate-[fadeIn_.5s_ease-out]"

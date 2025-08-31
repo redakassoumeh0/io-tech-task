@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, X, Search as SearchIcon } from "lucide-react";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 function BrandLogo() {
   return (
@@ -97,6 +98,7 @@ function NavLinks() {
   );
 }
 
+
 function SearchToggle({
   open,
   setOpen,
@@ -107,6 +109,7 @@ function SearchToggle({
   const [value, setValue] = useState("");
   const ref = useRef<HTMLInputElement>(null);
   const t = useTranslations("navbar");
+  const router = useRouter();
 
   useEffect(() => {
     if (open) ref.current?.focus();
@@ -117,6 +120,15 @@ function SearchToggle({
     window.addEventListener("keydown", onEsc);
     return () => window.removeEventListener("keydown", onEsc);
   }, [setOpen]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (value.trim()) {
+      router.push(`/search?q=${encodeURIComponent(value)}`);
+      setOpen(false);
+      setValue("");
+    }
+  };
 
   if (!open) {
     return (
@@ -131,7 +143,7 @@ function SearchToggle({
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <form onSubmit={handleSubmit} className="flex items-center gap-2">
       <input
         ref={ref}
         type="text"
@@ -141,13 +153,14 @@ function SearchToggle({
         className="rounded border border-white/60 bg-transparent px-3 py-1 text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-1 focus:ring-white/80 transition-all w-32 sm:w-52"
       />
       <button
+        type="button"
         onClick={() => setOpen(false)}
         className="p-1 text-white/85 hover:text-white transition"
         aria-label={t("close")}
       >
         <X size={18} />
       </button>
-    </div>
+    </form>
   );
 }
 

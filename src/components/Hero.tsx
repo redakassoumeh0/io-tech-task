@@ -94,14 +94,14 @@ export default function Hero({
         <>
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/45 transition"
+            className="z-50 absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/45 transition"
             aria-label="Previous slide"
           >
             <ChevronLeft />
           </button>
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/45 transition"
+            className="z-50 absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2 text-white hover:bg-black/45 transition"
             aria-label="Next slide"
           >
             <ChevronRight />
@@ -110,7 +110,7 @@ export default function Hero({
       )}
 
       {slides.length > 1 && (
-        <div className="absolute left-4 top-4/5 -translate-y-1/2 flex flex-col gap-2">
+        <div className="z-50 absolute left-4 top-4/5 -translate-y-1/2 flex flex-col gap-2">
           {slides.map((s, i) => (
             <button
               key={s.id}

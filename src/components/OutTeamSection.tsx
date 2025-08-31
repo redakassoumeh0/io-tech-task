@@ -10,6 +10,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { useStrapi } from "@/hooks/useStrapi";
 
 type Member = {
   name: string;
@@ -27,7 +28,24 @@ const OutTeamSection = () => {
 
   const title = t("team.title");
   const description = t("team.description");
-  const members = t.raw("team.members") as Member[];
+
+  const {
+    data: membersData,
+    loading,
+    error,
+  } = useStrapi<Member[]>("team-members");
+
+  console.log(membersData);
+
+  const members: Member[] =
+    membersData?.map((item: any) => ({
+      name: item.name || "No name",
+      position: item.position || "No position",
+      photo: item.image?.url || "", // أو استخدم formats.thumbnail.url لو تحب thumbnail
+      phone: item.social_links?.phone || undefined,
+      whatsapp: item.social_links?.whatsapp || undefined,
+      email: item.social_links?.email || undefined,
+    })) || [];
 
   const [index, setIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
@@ -100,6 +118,8 @@ const OutTeamSection = () => {
     ? `translateX(${translatePercent}%)`
     : `translateX(-${translatePercent}%)`;
 
+  if (error) return <p className="text-center py-10 text-red-500">{error}</p>;
+
   return (
     <section className="bg-brand-lighter/40" dir={isRTL ? "rtl" : "ltr"}>
       <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
@@ -128,23 +148,30 @@ const OutTeamSection = () => {
             <ChevronLeft />
           </button>
 
-          <div className="overflow-hidden">
-            <div
-              ref={trackRef}
-              className="flex transition-transform duration-300"
-              style={{ transform }}
-            >
-              {members.map((m, idx) => (
-                <div
-                  key={`${m.name}-${idx}`}
-                  className="px-3 sm:px-4"
-                  style={{ flex: `0 0 ${itemBasis}` }}
-                >
-                  <TeamCard member={m} />
-                </div>
-              ))}
+          {!members.length && !loading && (
+            <p className="text-center py-10">No team members found.</p>
+          )}
+          {loading ? (
+            <p className="text-center py-10">Loading team members...</p>
+          ) : (
+            <div className="overflow-hidden">
+              <div
+                ref={trackRef}
+                className="flex transition-transform duration-300"
+                style={{ transform }}
+              >
+                {members.map((m, idx) => (
+                  <div
+                    key={`${m.name}-${idx}`}
+                    className="px-3 sm:px-4"
+                    style={{ flex: `0 0 ${itemBasis}` }}
+                  >
+                    <TeamCard member={m} />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <button
             onClick={isRTL ? prev : next}
@@ -168,19 +195,17 @@ const OutTeamSection = () => {
 
 export default OutTeamSection;
 
-/* ============== Card ============== */
 function TeamCard({ member }: { member: Member }) {
   return (
     <article className="rounded-lg bg-white shadow-sm ring-1 ring-black/5 overflow-hidden">
       <div className="relative aspect-[4/3] bg-brand-medium">
         <Image
-          src={member.photo}
+          src={`http://localhost:1337${member.photo}`}
           alt={member.name}
           fill
           className="object-cover"
         />
       </div>
-
       <div className="px-4 py-4">
         <h3 className="text-center text-[15px] font-medium text-foreground">
           {member.name}
@@ -188,11 +213,10 @@ function TeamCard({ member }: { member: Member }) {
         <p className="mt-1 text-center text-xs tracking-widest text-foreground/60 uppercase ltr:uppercase rtl:normal-case">
           {member.position}
         </p>
-
         <div className="mt-3 flex items-center justify-center gap-4 text-foreground/70">
           {member.whatsapp && (
             <a
-              href={member.whatsapp}
+              href={`https://wa.me/${member.whatsapp}`}
               aria-label="WhatsApp"
               className="hover:text-foreground transition"
             >
@@ -201,7 +225,7 @@ function TeamCard({ member }: { member: Member }) {
           )}
           {member.phone && (
             <a
-              href={member.phone}
+              href={`tel:${member.phone}`}
               aria-label="Phone"
               className="hover:text-foreground transition"
             >
@@ -210,7 +234,7 @@ function TeamCard({ member }: { member: Member }) {
           )}
           {member.email && (
             <a
-              href={member.email}
+              href={`mailto:${member.email}`}
               aria-label="Email"
               className="hover:text-foreground transition"
             >

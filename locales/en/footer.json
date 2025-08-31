@@ -1,13 +1,12 @@
 {
-  "links": [
-    "About",
-    "Our Strategy",
-    "Our Advantages",
-    "Social Responsibility",
-    "Our Services"
-  ],
-  "contacts": "Contacts",
-  "emailPlaceholder": "Email",
+  "links": ["Home", "About", "Services", "Contact"],
+  "emailPlaceholder": "Enter your email",
   "subscribe": "Subscribe",
-  "rights": "All rights reserved."
+  "invalidEmail": "Invalid email address",
+  "required": "Email is required",
+  "successMessage": "Email submitted successfully!",
+  "errorMessage": "Something went wrong",
+  "emailExists": "This email is already subscribed",
+  "contacts": "Contacts",
+  "rights": "All rights reserved"
 }

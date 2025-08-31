@@ -1,0 +1,13 @@
+{
+  "back": "Back",
+  "placeholder": "Search for a team member or client...",
+  "searchBtn": "Search",
+  "teamMembers": "Team Members",
+  "clients": "Clients",
+  "noResults": "No matching results.",
+  "resultsFor": "Results for \"{query}\"",
+  "emptyQuery": "Type something to search.",
+  "footerNote": "You can search for any team member or client by entering their name or company.",
+  "searchOpen": "Open search",
+  "close": "Close search"
+}
