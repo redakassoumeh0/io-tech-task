@@ -15,22 +15,18 @@ const Footer = () => {
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: اربط الطلب بـ API عندك
-    // reset/feedback بسيط
+
     setEmail("");
   }
 
   return (
     <footer className="bg-brand-dark text-white" dir={isRTL ? "rtl" : "ltr"}>
       <div className="mx-auto max-w-7xl px-4 py-10 md:py-12">
-        {/* الشريط العلوي: فورم الاشتراك + تواصل */}
         <div
           className={`flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between`}
         >
-          {/* Spacer لترك فراغ يسار/يمين إذا بدك */}
           <div className="flex-1" />
 
-          {/* فورم الاشتراك */}
           <form
             onSubmit={onSubmit}
             className={`flex items-center gap-2 rounded border border-white/40 bg-white/5 px-1 py-1`}
@@ -52,7 +48,6 @@ const Footer = () => {
             </button>
           </form>
 
-          {/* تواصل + سوشيال */}
           <div className="flex items-center gap-3 md:gap-4">
             <span className="text-white/80 text-sm">{t("contacts")}</span>
             <div
@@ -85,14 +80,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* خط فاصل */}
         <hr className="my-6 border-white/20" />
 
-        {/* الروابط السفلية + الحقوق */}
         <div
           className={`flex flex-col gap-4 md:flex-row md:items-center md:justify-between`}
         >
-          {/* روابط */}
           <nav className={`-mx-2 flex flex-wrap items-center gap-x-4 gap-y-2`}>
             {links.map((label, i) => (
               <Link
@@ -105,9 +97,8 @@ const Footer = () => {
             ))}
           </nav>
 
-          {/* حقوق */}
           <div className="text-xs text-white/70">
-            © {new Date().getFullYear()}. {t("rights")}
+            © {new Date().getFullYear()}. {t("rights")} .
           </div>
         </div>
       </div>

@@ -31,7 +31,6 @@ export default async function ServicesPage() {
 
   return (
     <main dir={isRTL ? "rtl" : "ltr"}>
-      {/* Hero (الخلفية ثابتة مع طبقة تعتيم) */}
       <section className="relative h-[36vh] md:h-[42vh]">
         <div
           className="absolute inset-0 bg-center bg-cover"
@@ -39,13 +38,10 @@ export default async function ServicesPage() {
           aria-hidden
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-brand-dark/35 to-brand-dark/55" />
-        {/* محتوى بسيط فوق الخلفية (النافبار موجود خارج الصفحة كما ذكرت) */}
       </section>
 
-      {/* المحتوى */}
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-4 py-8 md:py-12">
-          {/* Back */}
           <div className="mb-6">
             <Link
               href="/"
@@ -59,13 +55,11 @@ export default async function ServicesPage() {
             </Link>
           </div>
 
-          {/* Title + intro */}
           <h1 className="text-2xl md:text-3xl font-semibold text-brand-dark">
             {title}
           </h1>
           <p className="mt-4 text-foreground/70 leading-relaxed">{intro}</p>
 
-          {/* Sections */}
           <div className="mt-8 space-y-8">
             <ServiceBlock title={general.title} bullets={general.bullets} />
 
@@ -82,7 +76,6 @@ export default async function ServicesPage() {
             />
           </div>
 
-          {/* Note */}
           <p className="mt-10 text-sm text-foreground/60">{t("footerNote")}</p>
         </div>
       </section>
@@ -90,7 +83,6 @@ export default async function ServicesPage() {
   );
 }
 
-/* ====== جزء صغير لإعادة الاستخدام ====== */
 function ServiceBlock({
   title,
   intro,

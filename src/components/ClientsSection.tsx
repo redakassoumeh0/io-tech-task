@@ -28,7 +28,6 @@ const ClientsSection = () => {
   const next = () => canNext && setIndex((i) => i + 1);
   const prev = () => canPrev && setIndex((i) => i - 1);
 
-  // سحب بالموبايل + قلب الاتجاه في RTL
   const wrapRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = wrapRef.current;
@@ -60,24 +59,20 @@ const ClientsSection = () => {
     };
   }, [isRTL, canNext, canPrev]);
 
-  // أنيميشن خفيف على التبديل
   const animKey = useMemo(() => `slide-${index}`, [index]);
 
   return (
     <section className="bg-brand-dark text-white" dir={isRTL ? "rtl" : "ltr"}>
       <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-        {/* Header */}
         <div className="max-w-3xl">
           <h2 className="text-2xl md:text-3xl font-semibold">{title}</h2>
           <p className="mt-3 text-sm md:text-base text-white/80">{subtitle}</p>
         </div>
 
-        {/* Content */}
         <div
           ref={wrapRef}
           className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center"
         >
-          {/* صورة العميل */}
           <div className="relative w-full aspect-[4/3] md:aspect-[4/3] bg-brand-medium rounded">
             <Image
               key={animKey + "-img"}
@@ -88,7 +83,6 @@ const ClientsSection = () => {
             />
           </div>
 
-          {/* النص */}
           <div
             key={animKey + "-text"}
             className="animate-[fadeIn_.5s_ease-out]"
@@ -106,7 +100,6 @@ const ClientsSection = () => {
               )}
             </div>
 
-            {/* أزرار */}
             <div
               className={`mt-8 flex items-center gap-3 ${
                 isRTL ? "flex-row-reverse" : ""

@@ -1,7 +1,7 @@
 // src/components/LocaleSwitcher.tsx
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { setLocaleAction } from "@/i18n/actions";
 import { Languages } from "lucide-react";
@@ -11,7 +11,6 @@ type Props = {
 };
 
 export default function LocaleSwitcher({ className = "" }: Props) {
-  const t = useTranslations("common");
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -25,8 +24,6 @@ export default function LocaleSwitcher({ className = "" }: Props) {
   return (
     <button
       onClick={switchLocale}
-      title={t("switch")}
-      aria-label={t("switch")}
       className={[
         "inline-flex items-center gap-1.5 rounded px-2 py-1 text-xs",
         "text-white/80 hover:text-white hover:bg-white/10",

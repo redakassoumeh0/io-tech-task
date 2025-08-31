@@ -64,7 +64,7 @@ function ServicesDropdown() {
           {servicesList.map((item, idx) => (
             <Link
               key={idx}
-              href="#"
+              href="/services"
               className="text-sm text-white/80 hover:text-white"
             >
               {item}

@@ -33,7 +33,6 @@ const OutTeamSection = () => {
   const [itemsPerView, setItemsPerView] = useState(3);
   const trackRef = useRef<HTMLDivElement>(null);
 
-  // responsive per view
   useEffect(() => {
     const compute = () => {
       const w = window.innerWidth;
@@ -46,7 +45,6 @@ const OutTeamSection = () => {
     return () => window.removeEventListener("resize", compute);
   }, []);
 
-  // clamp index
   useEffect(() => {
     setIndex((i) => Math.min(i, Math.max(0, members.length - itemsPerView)));
   }, [itemsPerView, members.length]);
@@ -57,7 +55,6 @@ const OutTeamSection = () => {
   const next = () => canNext && setIndex((i) => i + 1);
   const prev = () => canPrev && setIndex((i) => i - 1);
 
-  // swipe (mobile) — نحسّن الإحساس في RTL (نقلب الاتجاه)
   useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
@@ -75,7 +72,6 @@ const OutTeamSection = () => {
     const onEnd = () => {
       if (Math.abs(delta) > 50) {
         if (isRTL) {
-          // في RTL: سحب لليمين يعني "التالي" بصريًا
           delta > 0 ? next() : prev();
         } else {
           delta < 0 ? next() : prev();
@@ -93,7 +89,6 @@ const OutTeamSection = () => {
     };
   }, [canNext, canPrev, isRTL]);
 
-  // width + transform
   const itemBasis = useMemo(() => {
     if (itemsPerView === 1) return "100%";
     if (itemsPerView === 2) return "50%";
@@ -102,13 +97,12 @@ const OutTeamSection = () => {
 
   const translatePercent = (index * 100) / itemsPerView;
   const transform = isRTL
-    ? `translateX(${translatePercent}%)` // RTL: نمشي بالعكس
+    ? `translateX(${translatePercent}%)`
     : `translateX(-${translatePercent}%)`;
 
   return (
     <section className="bg-brand-lighter/40" dir={isRTL ? "rtl" : "ltr"}>
       <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold text-brand-dark">
             {title}
@@ -118,9 +112,7 @@ const OutTeamSection = () => {
           </p>
         </div>
 
-        {/* Slider */}
         <div className="relative mt-8 md:mt-10">
-          {/* Prev / Next – نعكس أماكن الأزرار في RTL */}
           <button
             onClick={isRTL ? next : prev}
             disabled={isRTL ? !canNext : !canPrev}
